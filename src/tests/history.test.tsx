@@ -199,7 +199,7 @@ describe("history", () => {
     );
   });
 
-  it("undo/redo supports element basic creation, selection and deletion", async () => {
+  it("undo/redo should support basic element creation, selection and deletion", async () => {
     await render(<Excalidraw handleKeyboardGlobally={true} />);
 
     const rect1 = UI.createElement("rectangle", { x: 10 });
@@ -330,7 +330,7 @@ describe("history", () => {
       excalidrawAPI = await excalidrawAPIPromise;
     });
 
-    it("applying history entries does not override remote changes on different elements", () => {
+    it("applying history entries should not override remote changes on different elements", () => {
       UI.createElement("rectangle", { x: 10 });
       togglePopover("Background");
       UI.clickOnTestId("color-red");
@@ -369,7 +369,7 @@ describe("history", () => {
       ]);
     });
 
-    it("applying history entries does not override remote changes on different props", () => {
+    it("applying history entries should not override remote changes on different props", () => {
       UI.createElement("rectangle", { x: 10 });
       togglePopover("Background");
       UI.clickOnTestId("color-red");
@@ -403,7 +403,7 @@ describe("history", () => {
     });
 
     // https://www.figma.com/blog/how-figmas-multiplayer-technology-works/#implementing-undo
-    it("history entries get updated after remote changes on same props", async () => {
+    it("history entries should get updated after remote changes on same props", async () => {
       UI.createElement("rectangle", { x: 10 });
       togglePopover("Background");
       UI.clickOnTestId("color-red");
@@ -463,7 +463,9 @@ describe("history", () => {
       ]);
     });
 
-    it("iterates through the history when element changes relate only to remotely deleted elements", async () => {
+    it("")
+
+    it("should iterate through the history when element changes relate only to remotely deleted elements", async () => {
       const rect1 = UI.createElement("rectangle", { x: 10 });
 
       const rect2 = UI.createElement("rectangle", { x: 20 });
@@ -538,7 +540,7 @@ describe("history", () => {
       ]);
     });
 
-    it("iterates through the history when selection changes relate only to remotely deleted elements", async () => {
+    it("should iterate through the history when selection changes relate only to remotely deleted elements", async () => {
       const rect1 = API.createElement({ type: "rectangle", x: 10, y: 10 });
       const rect2 = API.createElement({ type: "rectangle", x: 20, y: 20 });
       const rect3 = API.createElement({ type: "rectangle", x: 30, y: 30 });
@@ -578,7 +580,7 @@ describe("history", () => {
       ]);
     });
 
-    it("iterates through the history when selection changes relate only to remotely deleted elements", async () => {
+    it("should iterate through the history when selection changes relate only to remotely deleted elements", async () => {
       const rect1 = API.createElement({ type: "rectangle", x: 10, y: 10 });
       const rect2 = API.createElement({ type: "rectangle", x: 20, y: 20 });
       const rect3 = API.createElement({ type: "rectangle", x: 30, y: 30 });
@@ -618,7 +620,7 @@ describe("history", () => {
       ]);
     });
 
-    it("remote update does not interfere with in progress freedraw", async () => {
+    it("remote update should not interfere with in progress freedraw", async () => {
       UI.clickTool("freedraw");
       mouse.down(10, 10);
       mouse.moveTo(30, 30);
@@ -663,7 +665,7 @@ describe("history", () => {
     });
 
     // TODO_UNDO: tests like this might need to go through some util, as expectations in redo / undo are duplicated
-    it("remote update does not interfere with in progress dragging", async () => {
+    it("remote update should not interfere with in progress dragging", async () => {
       const rect1 = UI.createElement("rectangle", { x: 10, y: 10 });
       const rect2 = UI.createElement("rectangle", { x: 30, y: 30 });
 

@@ -460,7 +460,7 @@ export type SceneData = {
   appState?: ImportedDataState["appState"];
   collaborators?: Map<string, Collaborator>;
   commitToStore?: boolean;
-  skipSnapshotUpdate?: boolean;
+  skipSnapshotUpdate?: boolean; // TODO_UNDO: this flag is weird & causing breaking change, think about inverse (might cause less isues)
 };
 
 export enum UserIdleState {

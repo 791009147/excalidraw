@@ -254,6 +254,7 @@ export class AppStateChange implements Change<AppState> {
           return AppStateChange.checkForGroupsDifferences();
         default: {
           // WARN: this exhaustive check in the switch statement is here to catch unexpected future changes
+          // TODO_UNDO: use assertNever
           const exhaustiveCheck: never = key;
           throw new Error(
             `Unknown ObservedElementsAppState key '${exhaustiveCheck}'.`,

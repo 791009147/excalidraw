@@ -286,7 +286,7 @@ class Snapshot {
 
     for (const [id, prevElement] of this.elements.entries()) {
       // clone previous elements, never delete, in case nextElements would be just a subset of previous elements
-      // i.e. during collab, persist or whenenever get isDeleted elements cleaned
+      // i.e. during collab, persist or whenenever isDeleted elements are cleared
       clonedElements.set(id, prevElement);
     }
 
